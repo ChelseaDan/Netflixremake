@@ -33,5 +33,5 @@ app.post('/api/updateFavourite', tvController.updateFavourites);
 //app.get('/api/getGalleryPictures/:id/:main', locationController.getGalleryPictures);
 
 app.listen(process.env.PORT || 8080, function() {
-    console.log('I\'m Listening on port 3000...');
+    console.log('I\'m Listening on port 8080...');
 })
