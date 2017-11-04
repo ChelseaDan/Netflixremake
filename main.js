@@ -10,8 +10,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(timeout(3000));
 
-//mongoose.connect('mongodb://snapcity:abc123@ds119685.mlab.com:19685/heroku_g453zfnd');
-//locationController = require('./controllers/locationController');
+mongoose.connect('mongodb://netflix:user@ds147265.mlab.com:47265/heroku_hmh36qb4');
+tvController = require('./controllers/tvController');
 //userController = require('./controllers/userController');
 //Static file serving.
 
@@ -24,7 +24,7 @@ app.get('/', function(req, res) {
 		res.sendFile(__dirname + '/index.html');
 });
 
-//app.get('/api/getLocations', locationController.getLocations);
+app.get('/api/getFavourites', tvController.getFavourites);
 //app.post('/api/completeChallenge', userController.completeChallenge);
 //app.post('/api/createUser', userController.createUser);
 //app.get('/api/getCompletedChallenges/:id', userController.getCompletedChallenges);
@@ -35,4 +35,3 @@ app.get('/', function(req, res) {
 app.listen(process.env.PORT || 8080, function() {
     console.log('I\'m Listening on port 3000...');
 })
-
