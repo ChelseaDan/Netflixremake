@@ -10,18 +10,17 @@ module.exports.getFavourites = function(req, res) {
   });
 }
 
-module.exports.addToFavourites = function(req, res) {
-  console.log(req);
-  // if (req.params.add === 'true') {
-  //   var Med = new Media();
-  //   Med.save(function(err, result) {
-  //     res.json(result);
-  //   });
-  // } else {
-  //   Media.findOneAndRemove({name: req.params.id}, function(err, result) {
-  //     res.json(result);
-  //   })
-  // }
+module.exports.updateFavourites = function(req, res) {
+  if (req.body.add === 'true') {
+    var Med = new Media();
+    Med.save(function(err, result) {
+      res.json(result);
+    });
+  } else {
+    Media.findOneAndRemove({name: req.body.id}, function(err, result) {
+      res.json(result);
+    });
+  }
 }
 
 // module.exports.getImage = function(req, res) {

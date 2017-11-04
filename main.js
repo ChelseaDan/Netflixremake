@@ -25,7 +25,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/api/getFavourites', tvController.getFavourites);
-app.post('/api/updateFavourite', tvController.addToFavourites);
+app.post('/api/updateFavourite', tvController.updateFavourites);
 //app.post('/api/createUser', userController.createUser);
 //app.get('/api/getCompletedChallenges/:id', userController.getCompletedChallenges);
 //app.get('/api/getUser/:id', userController.getUser);
